@@ -22,6 +22,6 @@ RUN cargo build --release
 
 # Final base
 FROM debian:buster-slim
-COPY --from=builder /app/target/release/actions-test /usr/src/actions-test
+COPY --from=builder /actions-test/target/release/actions-test /usr/src/actions-test
 EXPOSE 8000
 CMD ["./usr/src/actions-test"]
